@@ -8,6 +8,8 @@ export default function Home(){
             <Construction/>
             <Header/>
             <h1>Home Page</h1>
+            <p>Since The Harvard Black Men’s Forum (BMF) was founded in the 2023, 
+            it has developed into one of the most recognized and celebrated organizations on the campus of Occidental College.</p>
         </>
     );
 
