@@ -1,44 +1,29 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import logo from '../images/logo.png';
 
-export default function Header(){
-    const navigate = useNavigate(); 
+export default function Header() {
+  return (
+    <header className="site-header">
+      {/* Logo Container */}
+      <div className="logo-container">
+        <img 
+          src={logo} 
+          alt="BMF Occidental College Logo" 
+          className="site-logo"
+        />
+      </div>
 
-    const handleClickHome = () => {
-        navigate('/');  // Navigate to Home page using the navigate hook
-    };
-
-    const handleClickAbout = () => {
-        navigate('/about');  // Navigate to About page using the navigate hook
-    };
-
-    const handleClickPillars = () => {
-        navigate('/pillars');  // Navigate to Pillars page using the navigate hook
-    };
-
-    const handleClickEboard = () => {
-        navigate('/eboard'); // Navigate to Eboard page using the navigate hook
-    };
-
-    const handleClickEvents = () => {
-        navigate('/events'); // Navigate to Events page using the navigate hook
-    };
-
-    const handleClickHistory = () => {
-        navigate('/history'); // Navigate to History page using the navigate hook
-    };
-
-    return(
-        <header>
-            <nav>
-                <ul>
-                    <li><button onClick={handleClickHome}>Home</button></li>
-                    <li><button onClick={handleClickAbout}>About</button></li>
-                    <li><button onClick={handleClickPillars}>Pillars</button></li>
-                    <li><button onClick={handleClickEboard}>Eboard</button></li>
-                    <li><button onClick={handleClickEvents}>Events</button></li>
-                    <li><button onClick={handleClickHistory}>History</button></li>
-                </ul>
-            </nav>
-        </header>
-    );
+      {/* Navigation Menu */}
+      <nav className="nav-menu" aria-label="Main Navigation">
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/pillars">Pillars</Link></li>
+          <li><Link to="/eboard">E-Board</Link></li>
+          <li><Link to="/events">Events</Link></li>
+          <li><Link to="/history">History</Link></li>
+        </ul>
+      </nav>
+    </header>
+  );
 }

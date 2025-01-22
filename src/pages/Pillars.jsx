@@ -1,3 +1,6 @@
+/* Pillars */
+
+
 import Header from '../components/Header';
 import Construction from '../components/Construction';
 
