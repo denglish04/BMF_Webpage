@@ -185,20 +185,21 @@
     /* or bigger if needed */
   }
 
-  /* =========================================
+/* =========================================
    GLOBAL HEADER STYLES
    ========================================= */
 
-.site-header {
+   .site-header {
     background-color: #F5F5F3;
-    /* 167px tall from Figma snippet */
+    /* On large screens, keep a fixed height if you truly want 167px. 
+       Or remove it if you prefer auto-height. */
     height: 167px;
     display: flex;
-    align-items: center; /* vertically center logo & nav items */
-    justify-content: space-between; /* logo on left, nav on right */
-    padding: 0 2rem; /* horizontal spacing inside the header */
-    box-sizing: border-box; /* ensure padding doesn’t add to total width */
-    border-bottom: 1px solid #000; /* optional border if you want the line */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #000;
   }
   
   .logo-container {
@@ -206,42 +207,135 @@
     align-items: center;
   }
   
+  /* Keep the logo large on desktop and the first breakpoint */
   .site-logo {
-    
-    max-height: 100px;
+    max-height: 200px;
     width: auto;
-    /* If we want a box-shadow or border around the logo, add it here. */
   }
   
-  /* Nav styles */
+  /* Nav is a single row by default on large screens */
   .nav-menu ul {
-    list-style: none;     
-    margin: 0;           
-    padding: 0;          
-    display: flex;       /* places nav items in row */
-    gap: 1rem;           /* space between buttons */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* horizontal row on large screens */
+    gap: 1rem;
+    flex-wrap: nowrap; 
   }
   
-  .nav-menu li {
-    /* if needed */
-  }
-  
-  
-  .nav-menu button {
-    background-color: #74706E; 
+  .nav-menu li a {
+    display: inline-block;
+    white-space: nowrap; /* text won’t break onto multiple lines */
+    background-color: #74706E;
     color: #FFFFFF;
-    font-family: 'Inria Sans', sans-serif; 
-    font-size: 20px;
-    line-height: 24px;
-    border: none;
-    border-radius: 15px;
+    font-family: 'Inria Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px; /* large screen size */
+    text-decoration: none;
+    border-radius: 20px;
     padding: 0.5rem 1.25rem;
     cursor: pointer;
-    
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s ease, transform 0.2s ease;
   }
   
-  /* Hover effects, maybe?? */
-  .nav-menu button:hover {
-    filter: brightness(0.9);
+  .nav-menu li a:hover {
+    background-color: #5f5b5a;
+    transform: scale(1.05);
+  }
+  
+  /* --- FIRST BREAKPOINT (max-width: 1100px) ---
+     Switch nav to two rows of three buttons each, 
+     but keep the logo the same size
+  */
+  @media (max-width: 1000px) {
+  
+    /* Let the header auto-size vertically if needed */
+    .site-header {
+      height: auto;
+    }
+  
+    /* Keep the same big logo for now */
+    .site-logo {
+      max-height: 200px;
+    }
+  
+    /* Switch nav to a grid: 3 columns x 2 rows = 6 items total */
+    .nav-menu ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      flex-wrap: unset; /* not needed anymore, since we're using grid */
+      width: 600px;     /* optional: fix a width so each column is consistent */
+      justify-items: center;
+    }
+  
+    /* Keep the same font size or slightly reduce if you want */
+    .nav-menu li a {
+      font-size: 20px; 
+      padding: 0.5rem 1.25rem;
+    }
+  }
+  
+  /* --- SECOND BREAKPOINT (max-width: 800px) ---
+     Move logo above nav, shrink logo, 
+     still keep 3x2 grid for the nav
+  */
+  @media (max-width: 800px) {
+    .site-header {
+      flex-direction: column; 
+      align-items: center;
+      height: auto;
+      padding: 1rem;
+    }
+  
+    /* Shrink the logo for mobile */
+    .site-logo {
+      max-height: 250px;
+      margin-bottom: 1rem;
+    }
+  
+    /* The nav is still 3 columns x 2 rows, but smaller font/padding */
+    .nav-menu ul {
+      width: 100%; /* let it use full width or set your own */
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+    }
+  
+    .nav-menu li a {
+      font-size: 18px; /* a bit smaller for phones */
+      padding: 0.4rem 1rem;
+    }
+  }
+
+  /* --- THIRD BREAKPOINT (max-width: 600px) ---
+     Move logo above nav, shrink logo, 
+     still keep 3x2 grid for the nav
+  */
+
+  @media (max-width: 650px) {
+    .site-header {
+      flex-direction: column; 
+      align-items: center;
+      height: auto;
+      padding: 1rem;
+    }
+  
+    /* Shrink the logo for mobile */
+    .site-logo {
+      max-height: 250px;
+      margin-bottom: 1rem;
+    }
+  
+    /* The nav is still 3 columns x 2 rows, but smaller font/padding */
+    .nav-menu ul {
+      width: 100%; /* let it use full width or set your own */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  
+    .nav-menu li a {
+      font-size: 18px; /* a bit smaller for phones */
+      padding: 0.4rem 1rem;
+    }
   }
