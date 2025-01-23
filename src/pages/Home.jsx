@@ -1,5 +1,5 @@
 // Home.jsx
-
+    //This Link import was flagged an error for not being used
 import { Link } from 'react-router-dom';
 // import Construction from '../components/Construction'; 
 import Header from '../components/Header';
@@ -23,10 +23,11 @@ export default function Home() {
           className="hero-image" 
         />
         <div className="hero-content">
-          <h1 className="hero-title">Occidental’s Black Men’s Forum</h1>
+          <h1 className="hero-title">OCCIDENTAL&apos;S BLACK MEN&apos;S FORUM</h1>
           <div className="hero-buttons">
-            <button>Learn More</button>
-            <button>Events &amp; Programs</button>
+            <button><Link to="/history" style={{color: "white"}}> Learn More </Link></button>
+            <button><Link to="/events" style={{color: "white"}}>Events &amp; Programs</Link></button>
+            
           </div>
         </div>
       </section>
@@ -46,7 +47,8 @@ export default function Home() {
           on Harvard’s campus. Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
 
-        <button className="about-button">Learn More About BMF</button>
+        <button className="about-button"> <Link to="/about" style={{color: "white"}}> Learn More About Us</Link></button>
+        
       </section>
 
       {/* PILLARS SECTION */}
@@ -87,7 +89,7 @@ export default function Home() {
           {/* You can add more pillar cards for Collaboration, Community, Empowerment, etc. */}
         </div>
 
-        <button className="pillars-button">Learn More About Our Pillars</button>
+        <button className="pillars-button"><Link to ="/pillars" style = {{color: "white"}}>Learn More About Our Pillars</Link></button>
       </section>
 
       {/* PARTNERS SECTION */}
