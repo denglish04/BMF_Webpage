@@ -23,7 +23,7 @@ export default function Home() {
           className="hero-image" 
         />
         <div className="hero-content">
-          <h1 className="hero-title">Occidental’s Black Men’s Forum</h1>
+          <h1 className="hero-title">Occidental’s Black <br /> Men’s Forum</h1>
           <div className="hero-buttons">
             <button>Learn More</button>
             <button>Events &amp; Programs</button>
