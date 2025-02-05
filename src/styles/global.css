@@ -220,11 +220,24 @@
   }
   
   .pillar-grid {
-    display: flex;
-    margin-top: 20px;
-    flex-wrap: wrap; /* so they can wrap on smaller screens */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    justify-content: center;
+    margin-top: 20px;
+    justify-items: center;  
+  }
+  
+  
+  @media (max-width: 900px) {
+    .pillar-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .pillar-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   
   .pillar-card {
