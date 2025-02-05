@@ -9,8 +9,9 @@ export default function Blog(){
 
     return(
         <>
-            <Construction/>
             <Header/>
+            <Construction/>
+
             <h1>Pillars Page</h1>
             <div>
                 <ul>

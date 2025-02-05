@@ -8,8 +8,8 @@ export default function About(){
  
     return(
         <>
-            <Construction/>
             <Header/>
+            <Construction/>
             <h1>About Page</h1>
             <p>As an organization, we strive to foster a supportive atmosphere of brotherhood among the black masculine identifying community on campus. 
                 We are concerned with political, social, and cultural issues regarding black men on the campus of Occidental College and beyond, and we promote 

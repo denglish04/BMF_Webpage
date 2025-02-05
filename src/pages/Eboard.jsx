@@ -9,8 +9,8 @@ export default function Eboard(){
 
     return(
         <>
-            <Construction/>
             <Header/>
+            <Construction/>
             <h1>Eboard Page</h1>
             <ul>
                 <li> Co-President: Darius </li>

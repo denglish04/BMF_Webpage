@@ -9,8 +9,8 @@ export default function Events(){
 
     return(
         <>
-            <Construction/>
             <Header/>
+            <Construction/>
             <h1>Events Page</h1>
         </>
     );
