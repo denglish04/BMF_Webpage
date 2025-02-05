@@ -88,43 +88,95 @@ export default function Home() {
 
       {/* PILLARS SECTION */}
       <section className="pillars">
-        <h2>The Pillars of the Black Men’s Forum</h2>
+        <div className="pillars-card">
 
-        <div className="pillar-grid">
-          {/* Pillar Card 1 */}
-          <div className="pillar-card">
-            <img src={random1} alt="Brotherhood" />
-            <h3>Brotherhood</h3>
-            <p>
-              “[I will] prove myself a good brother by making a conscious effort
-              to know my fellow brethren...”
-            </p>
+          {/* Optional “tab” label at the top of the card */}
+          <div className="pillars-label">
+            THE PILLARS OF THE BLACK MEN’S FORUM
           </div>
 
-          {/* Pillar Card 2 */}
-          <div className="pillar-card">
-            <img src={random1} alt="Innovation" />
-            <h3>Innovation</h3>
-            <p>
+          {/* Pillar Cards */}
+          <div className="pillar-grid">
+            {/* Pillar Card 1 */}
+            <div className="pillar-card">
+              <img src={random1} alt="Brotherhood" />
+              <h3>Brotherhood</h3>
+              <p>
+                “[I will] prove myself a good brother by making a 
+                conscious effort to know my fellow brethren on a 
+                personal level and by providing a means for advice”
+              </p>
+            </div>
+
+            {/* Pillar Card 2 */}
+            <div className="pillar-card">
+              <img src={random1} alt="Innovation" />
+              <h3>Innovation</h3>
+              <p>
               “Foster a culture of creativity and continuous improvement, 
-              encouraging novel ideas...”
-            </p>
+              encouraging novel ideas and technological advancements.”
+              </p>
+            </div>
+
+            {/* Pillar Card 3 */}
+            <div className="pillar-card">
+              <img src={random1} alt="Sustainability" />
+              <h3>Sustainability</h3>
+              <p>
+              “Prioritize environmentally friendly practices to 
+              ensure long-term ecological balance and reduce the 
+              environmental impact.”
+              </p>
+            </div>
+
+            {/* Pillar Card 4 */}
+            <div className="pillar-card">
+              <img src={random2} alt="Sustainability" />
+              <h3>Collaboration</h3>
+              <p>
+                “Cultivate a collaborative work environment where
+                 diverse talents come together, promoting effective 
+                 communication, cooperation, and mutual support.”
+              </p>
+            </div>
+
+            {/* Pillar Card 5 */}
+            <div className="pillar-card">
+              <img src={random1} alt="Innovation" />
+              <h3>Community</h3>
+              <p>
+              Demonstrate a commitment to community involvent 
+              and social responsibility, aiming to positively 
+              impact the community 
+              </p>
+            </div>
+
+            {/* Pillar Card 6 */}
+            <div className="pillar-card">
+              <img src={random1} alt="Innovation" />
+              <h3>Empowerment</h3>
+              <p>
+              Invest in the growth and well-being of members by 
+              providing opportunities for professional development, 
+              a supportive workplace culture, and a focus on 
+              work-life balance.
+              </p>
+            </div>
+
+            
+
+
+
+            {/* Add more pillar cards here for Collaboration, Community, Empowerment, etc. */}
           </div>
 
-          {/* Pillar Card 3 */}
-          <div className="pillar-card">
-            <img src={random1} alt="Sustainability" />
-            <h3>Sustainability</h3>
-            <p>
-              “Prioritize environmentally friendly practices to ensure
-              long-term ecological balance...”
-            </p>
-          </div>
+          <button className="pillars-button">
+            <Link to="/pillars" style={{ color: "white" }}>
+              Learn More About Our Pillars
+            </Link>
+          </button>
 
-          {/* You can add more pillar cards for Collaboration, Community, Empowerment, etc. */}
         </div>
-
-        <button className="pillars-button"><Link to ="/pillars" style = {{color: "white"}}>Learn More About Our Pillars</Link></button>
       </section>
 
       {/* PARTNERS SECTION */}
