@@ -1,4 +1,5 @@
 /* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
 
 
 
@@ -60,12 +61,45 @@
     cursor: pointer;
   }
   
-  /* ABOUT SECTION */
+  /* About card container */
   .about {
-    max-width: 1200px; /* centers the content on desktop */
-    margin: 0 auto;
+    
+    padding: 1rem 0; 
+    background-color: #F9F9F9; 
+  }
+  
+  .about-card {
+    width: 95%;             
+    max-width: 1200px;      
+    margin: 2rem auto;    
     padding: 2rem;
-    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
+
+  /* (Optional) If you don't want .about controlling width, 
+    you can set max-width in the card itself instead:
+  .about-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    ...
+  }
+  */
+
+  .about-label {
+    /* Base styling */
+    background-color: #D9D9D9;      
+    color: #000;                   
+    padding: 0.5rem 1rem;           
+    border-radius: 5px;            
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    font-family: "Bebas Neue", sans-serif; 
+    font-weight: 550;      
+    font-size: 1.5rem;             
+    display: inline-block;         
+    margin-bottom: 1rem;            
   }
   
   .about h2 {
@@ -73,36 +107,82 @@
     margin-bottom: 1.5rem;
   }
   
+  /* ABOUT IMAGES*/
   .about-images {
     display: flex;
+    flex-wrap: wrap; 
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
   }
-  
-  .about-images img {
-    width: 300px;
-    height: auto;
-    object-fit: cover;
+
+  /* Each image “card” container */
+  .image-card {
+    margin-top: 20px;
+    width: 300px; 
+    height: 300px;
+    background: #FFFFFF;
+    /* Increase border thickness and darken it a bit */
+    border: 8px solid rgba(0, 0, 0, 0.2);
+    /* Make the shadow a bit stronger (slightly larger blur and less transparent) */
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0; 
   }
-  
-  .about-text {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
+
+  /* The actual <img> inside the card */
+  .image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* crops the image to fill the square container */
   }
+
   
-  .about-button {
-    background-color: #ED8031;
-    color: #000000;
-    border: none;
-    border-radius: 30px;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.2rem;
-    cursor: pointer;
+  @media (max-width: 900px) {
+    /* Slightly shrink the card at 900px wide or below */
+    .image-card {
+      width: 250px;
+      height: 250px;
+    }
   }
+
+  @media (max-width: 600px) {
+    /* For very small screens, let the card take full width (up to 300px). */
+    .image-card {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto; 
+    }
+  }
+    
+    .about-text {
+      text-align: center;
+      font-family: 'Nanum Myeongjo', serif;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+    }
+    
+    .about-button {
+      background-color: #ED8031;
+      color: #000000;
+      border: none;
+      border-radius: 30px;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+    
+      display: block;       
+      margin: 2rem auto 0; 
+      text-align: center;   
+    }
   
+
+
+
+
   /* PILLARS SECTION */
   .pillars {
     max-width: 1200px;

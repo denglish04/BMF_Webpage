@@ -37,21 +37,53 @@ export default function Home() {
 
       {/* ABOUT SECTION */}
       <section className="about">
-        <h2>About the Black Men’s Forum</h2>
+        <div className="about-card">
 
+        <div className="about-label">
+        ABOUT THE BLACK MEN’S FORUM
+        </div>
+          
+          
+          
         <div className="about-images">
-          <img src={random1} alt="Group event 1" />
-          <img src={random2} alt="Group event 2" />
+          <div className="image-card">
+            <img src={random1} alt="Group event 1" />
+          </div>
+          <div className="image-card">
+            <img src={random2} alt="Group event 2" />
+          </div>
+          <div className="image-card">
+            <img src={random2} alt="Group event 3" />
+          </div>
         </div>
 
-        <p className="about-text">
-          Since The Harvard Black Men’s Forum (BMF) was founded in the 1970s, it 
-          has developed into one of the most recognized and celebrated organizations 
-          on Harvard’s campus. Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        </p>
+        <div className="about-text">
+          <p>
+            Since The Harvard Black Men’s Forum (BMF) was founded in the 1970s, 
+            it has developed into one of the most recognized and celebrated 
+            organizations on Harvard’s campus...<br /><br />
+          </p>
 
-        <button className="about-button"> <Link to="/about" style={{color: "white"}}> Learn More About Us</Link></button>
-        
+          <p>
+            Since The Harvard Black Men’s Forum (BMF) was founded in the 1970s, 
+            it has developed into one of the most recognized and celebrated 
+            organizations on Harvard’s campus...<br /><br />
+          </p>
+
+          <p>
+            Since The Harvard Black Men’s Forum (BMF) was founded in the 1970s, 
+            it has developed into one of the most recognized and celebrated 
+            organizations on Harvard’s campus...
+          </p>
+        </div>
+          
+          <button className="about-button">
+            <Link to="/about" style={{ color: "white" }}>
+              Learn More About Us
+            </Link>
+          </button>
+
+        </div>
       </section>
 
       {/* PILLARS SECTION */}
