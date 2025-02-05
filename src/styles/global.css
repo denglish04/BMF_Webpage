@@ -33,9 +33,13 @@
   
   .hero-content {
     position: absolute;
-    top: 35%; /* adjust to move text higher/lower */
-    left: 5%;
+    top: 35%;
+    left: 2%;
+    right: 2%; 
     color: #FFFFFF;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    text-align: center; 
+    
   }
   
   .hero-title {
